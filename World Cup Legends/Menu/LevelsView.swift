@@ -82,7 +82,7 @@ struct LevelsView: View {
         let playerChoice = playerLevel
         
         if playerChoice == "level 1" {
-            quiz.level += 1
+            quiz.level.levelProgress += 1
             print("quiz level increased by 2")
             quiz.checkLevel()
             print("quiz level checked")

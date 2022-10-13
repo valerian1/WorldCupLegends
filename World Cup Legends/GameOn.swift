@@ -9,9 +9,11 @@ import SwiftUI
 
 
 struct GameOn: View {
+    // Screens controllers
     @State private var onMenu = false
     @State private var winOrLoose = false
     @State private var playerWon = false
+    // In game mode views
     @State private var playerLostMessage = ""
     @State private var playerGold = 100
     @State private var timeRemaining = 45
@@ -20,23 +22,23 @@ struct GameOn: View {
     @State private var nextQuestionTime = 2
     @State private var nextQuestionTimeRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+    // Questions
     @State private var questionLabel = ""
     @State private var questionImage = "Maradona"
-    
+    // Possible answers
     @State private var correctAnswer = ""
     @State private var fakeAnswer1 = ""
     @State private var fakeAnswer2 = ""
     @State private var fakeAnswer3 = ""
     @State private var answerList = [String]().shuffled()
-    
+    var columns: [GridItem] = Array(repeating: GridItem(.fixed(170)), count: 2)
+    // Quiz and levels
     @State var quiz = QuizBrain()
-    @StateObject var level = Level()
+    var level = Level()
+    // Answers counters
     @State var correctAnswers = 0
     @State var wrongAnswers = 0
             
-    var columns: [GridItem] = Array(repeating: GridItem(.fixed(170)), count: 2)
-    
     var body: some View {
         ZStack {
             if onMenu {
@@ -233,7 +235,7 @@ struct GameOn: View {
         nextQuestionTimeRunning = false
         
         print("In brain Level before quiz.level \(quiz.level)")
-        quiz.level += 1
+        quiz.level.levelProgress += 1
         print("In brain Level after quiz.level \(quiz.level)")
         quiz.checkLevel()
         

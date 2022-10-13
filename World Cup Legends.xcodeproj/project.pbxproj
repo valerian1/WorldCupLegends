@@ -106,8 +106,8 @@
 			children = (
 				3004F7F428DB385800928F12 /* Question.swift */,
 				3004F7F628DB39A500928F12 /* QuizBrain.swift */,
-				30CBF48C28DE2F4100AF6E9F /* Level.swift */,
 				30CBF48428DDBB2400AF6E9F /* QuizLevels.swift */,
+				30CBF48C28DE2F4100AF6E9F /* Level.swift */,
 				30DD449128DF26D9007ECFB2 /* Gold.swift */,
 			);
 			path = Model;

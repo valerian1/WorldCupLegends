@@ -10,18 +10,22 @@ import Foundation
 struct QuizBrain {
     
     var quiz = QuizLevels().level1
-    var level = Level().levelProgress
+    var level = Level()
     
     var questionNumber = 0
     
     mutating func checkLevel() {
         questionNumber = 0
         
-        if level == 1 {
+        if level.levelProgress == 1 {
             quiz = QuizLevels().level1
-        } else if level == 2 {
+        } else if level.levelProgress == 2 {
             quiz = QuizLevels().level2
         }        
+    }
+    
+    func checkCurrentLevel() -> (Int, Bool) {
+        return (level.levelProgress, level.levelUnlocked)
     }
     
     func getQuestionText() -> String {

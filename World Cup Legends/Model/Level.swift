@@ -7,11 +7,13 @@
 
 import Foundation
 
-class Level: ObservableObject {
-    @Published var levelProgress = 1
+struct Level {
+    var levelProgress = 1
+    var levelUnlocked = false
     
-    func levelUp() {
+    mutating func levelUp() {
         levelProgress += 1
+        levelUnlocked = true
         print("Level in class \(levelProgress)")
     }
 }
