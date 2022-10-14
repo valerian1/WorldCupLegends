@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct GameOn: View {
     // Screens controllers
     @State private var onMenu = false
