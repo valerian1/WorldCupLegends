@@ -15,7 +15,7 @@ struct GameOn: View {
     // In game mode views
     @State private var playerLostMessage = ""
     @State private var playerGold = 100
-    @State private var timeRemaining = 45
+    @State private var timeRemaining = 145
     @State private var rightOrWrong = "🧐"
     @State private var timeRunning = false
     @State private var nextQuestionTime = 2
@@ -33,7 +33,7 @@ struct GameOn: View {
     var columns: [GridItem] = Array(repeating: GridItem(.fixed(170)), count: 2)
     // Quiz and levels
     @State var quiz = QuizBrain()
-    var level = Level()
+    var level = LevelsBrain()
     // Answers counters
     @State var correctAnswers = 0
     @State var wrongAnswers = 0
@@ -52,7 +52,10 @@ struct GameOn: View {
                             Text("Congrats you qualified")
                             
                             Button {
-                                nextLevel()
+                                play()
+                                print("nextLevel() called, Player level: \(level.playerLevel.levelProgress)")
+                                print("nextLevel() called, Player level 2 unlocked: \(level.playerLevel.level2Unlocked)")
+
                             } label: {
                                 Text("Continue")
                             }
@@ -169,16 +172,14 @@ struct GameOn: View {
                 .onAppear {
                     play()
                     print("On appear")
-                    print("Level in Level class: \(level.levelProgress)")
+                    print("Player level in LevelsBrain: \(level.playerLevel.levelProgress)")
+                    print("Level 2 unlocked in LevelsBrain: \(level.playerLevel.level2Unlocked)")
                 }
                 Spacer()
             }
         }
     }
-        
     
-    
-
 
     func answerButtonPressed(button: String) {
         let userAnswer = button
@@ -189,8 +190,9 @@ struct GameOn: View {
             correctAnswers += 1
             rightOrWrong = "Correct 👏"
                                     // Must add level requirements ( if  correctAnswers == levelRequirements { } )
-            if correctAnswers == 3 && level.levelProgress == 1 {
+            if correctAnswers == 3 && level.playerLevel.levelProgress == 1 {
                 level.levelUp()
+                print("levelUp(). player level: \(level.playerLevel.levelProgress)")
                 winOrLoose = true
                 playerWon = true
             }
@@ -205,6 +207,7 @@ struct GameOn: View {
             rightOrWrong = "Wrong 😱"
         }
         nextQuestionTimeRunning.toggle()
+        print("answer button pressed")
 }
     
     func askQuestion() {
@@ -230,36 +233,28 @@ struct GameOn: View {
         rightOrWrong = "🧐"
     }
     
-    func nextLevel() {
-        nextQuestionTimeRunning = false
-        
-        print("In brain Level before quiz.level \(quiz.level)")
-        quiz.level.levelProgress += 1
-        print("In brain Level after quiz.level \(quiz.level)")
+    func play() {
+        quiz.updateLevel()
         quiz.checkLevel()
         
+        nextQuestionTimeRunning = false
         rightOrWrong = "🧐"
-        timeRemaining = 45
+        timeRemaining = 145
+    
         answerList.shuffle()
         askQuestion()
         generateAnswers()
         timeRunning.toggle()
         winOrLoose = false
-        print("In brain Level \(quiz.level)")
-    }
-    
-    func play() {
-        answerList.shuffle()
-        askQuestion()
-        generateAnswers()
-        timeRunning.toggle()
+
+        print("play(). level progress in Level class: \(level.playerLevel.levelProgress)")
     }
     
     // Play again if player lost
     func restart() {
         nextQuestionTimeRunning = false
         rightOrWrong = "🧐"
-        timeRemaining = 30
+        timeRemaining = 230
         playerGold = 3
         answerList.shuffle()
         askQuestion()

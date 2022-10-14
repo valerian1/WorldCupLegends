@@ -8,36 +8,22 @@
 import SwiftUI
 
 struct LevelsView: View {
-    @State var level1 = false
-    @State var level2 = false
-    @State var level3 = false
-    @State var level4 = false
-    @State var level5 = false
+    @State var gameOn = false
     
     @State var quiz = QuizBrain()
-    var level = Level()
+    var level = LevelsBrain()
         
     var body: some View {
         VStack {
             Spacer()
             
-            if level1 {
-                GameOn()
-            } else if level2 {
-                GameOn()
-            } else if level3 {
-                GameOn()
-            } else if level4 {
-                GameOn()
-            } else if level5 {
+            if gameOn {
                 GameOn()
             } else {
                 
                 Button {
                     print("level button 1 pressed")
-
                     startPlayerLevel(playerLevel: "level 1")
-                    level1.toggle()
                 } label: {
                     Text("Level 1")
                 }
@@ -45,34 +31,37 @@ struct LevelsView: View {
                 
                 Button {
                     print("level button 2 pressed")
-                    startPlayerLevel(playerLevel: "level 1")
+                    startPlayerLevel(playerLevel: "level 2")
                 } label: {
                     Text("Level 2")
-                    Image(systemName: level.level2Unlocked ? "" : "lock.fill")
+                    Image(systemName: level.playerLevel.level2Unlocked ? "" : "lock.fill")
                 }
                 .answerButtonStyle()
                 
                 Button {
-                    
+                    print("level button 3 pressed")
+                    startPlayerLevel(playerLevel: "level 3")
                 } label: {
                     Text("Level 3")
-                    Image(systemName: level.level3Unlocked ? "" : "lock.fill")
+                    Image(systemName: level.playerLevel.level3Unlocked ? "" : "lock.fill")
                 }
                 .answerButtonStyle()
 
                 Button {
-                    
+                    print("level button 4 pressed")
+                    startPlayerLevel(playerLevel: "level 4")
                 } label: {
                     Text("Level 4")
-                    Image(systemName: level.level4Unlocked ? "" : "lock.fill")
+                    Image(systemName: level.playerLevel.level4Unlocked ? "" : "lock.fill")
                 }
                 .answerButtonStyle()
 
                 Button {
-                    
+                    print("level button 5 pressed")
+                    startPlayerLevel(playerLevel: "level 5")
                 } label: {
                     Text("Level 5")
-                    Image(systemName: level.level5Unlocked ? "" : "lock.fill")
+                    Image(systemName: level.playerLevel.level5Unlocked ? "" : "lock.fill")
                 }
                 .answerButtonStyle()
 
@@ -92,29 +81,57 @@ struct LevelsView: View {
         let playerChoice = playerLevel
         
         if playerChoice == "level 1" {
-            quiz.level.levelProgress = 1
-            print("quiz level increased by 2")
-            quiz.checkLevel()
-            print("quiz level checked")
+            level.playerLevel.levelProgress = 1
+            playChosenLevel()
+            print("quiz level checked > Level 1 chosen")
         } else if playerChoice == "level 2" {
-            if level.level2Unlocked {
-                quiz.level.levelProgress = 2
-                quiz.checkLevel()
+            
+            if level.playerLevel.level2Unlocked {
+                level.playerLevel.levelProgress = 2
+                playChosenLevel()
+                print("quiz level checked > Level 2 chosen")
             } else {
-                return
+                print("You must unlock level 2 first")
             }
             
         } else if playerChoice == "level 3" {
-            quiz.level.levelProgress = 3
-            quiz.checkLevel()
+            
+            if level.playerLevel.level3Unlocked {
+                level.playerLevel.levelProgress = 3
+                playChosenLevel()
+                print("quiz level checked > Level 3 chosen")
+            } else {
+                print("You must unlock level 3 first")
+            }
+            
+            
         } else if playerChoice == "level 4" {
-            quiz.level.levelProgress = 4
-            quiz.checkLevel()
+            
+            if level.playerLevel.level4Unlocked {
+                level.playerLevel.levelProgress = 4
+                playChosenLevel()
+                print("quiz level checked > Level 4 chosen")
+            } else {
+                print("You must unlock level 4 first")
+            }
+            
         } else if playerChoice == "level 5" {
-            quiz.level.levelProgress = 5
-            quiz.checkLevel()
+            
+            if level.playerLevel.level5Unlocked {
+                level.playerLevel.levelProgress = 5
+                playChosenLevel()
+                print("quiz level checked > Level 5 chosen")
+            } else {
+                print("You must unlock level 5 first")
+            }
+            
         }
-
+    }
+    
+    func playChosenLevel() {
+        quiz.updateLevel()
+        quiz.checkLevel()
+        gameOn.toggle()
     }
 }
 

@@ -10,17 +10,25 @@ import Foundation
 struct QuizBrain {
     
     var quiz = QuizLevels().level1
-    var level = Level()
+    var level = 1
     
     var questionNumber = 0
     
+    mutating func updateLevel() {
+        level = LevelsBrain().playerLevel.levelProgress
+        print("updateLevel() called in QuizBrain(), level: \(level)")
+    }
+    
     mutating func checkLevel() {
+        print("checkLevel() called in QuizBrain")
         questionNumber = 0
         
-        if level.levelProgress == 1 {
+        if level == 1 {
             quiz = QuizLevels().level1
-        } else if level.levelProgress == 2 {
+            print("level in QuizBrain after check: \(level)")
+        } else if level == 2 {
             quiz = QuizLevels().level2
+            print("level in QuizBrain after check level 2: \(level)")
         }        
     }
     

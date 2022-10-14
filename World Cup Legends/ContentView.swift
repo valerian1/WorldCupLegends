@@ -13,7 +13,7 @@ struct ContentView: View {
 
     var body: some View {
         if isPlayng {
-            GameOn()
+            LevelsView()
         } else {
             VStack {
                 Spacer()
