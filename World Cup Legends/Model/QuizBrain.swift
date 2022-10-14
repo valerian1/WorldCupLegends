@@ -24,10 +24,6 @@ struct QuizBrain {
         }        
     }
     
-    func checkCurrentLevel() -> (Int, Bool) {
-        return (level.levelProgress, level.levelUnlocked)
-    }
-    
     func getQuestionText() -> String {
         return quiz[questionNumber].text
     }

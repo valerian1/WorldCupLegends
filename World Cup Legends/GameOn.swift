@@ -191,7 +191,7 @@ struct GameOn: View {
             rightOrWrong = "Correct 👏"
                                     // Must add level requirements ( if  correctAnswers == levelRequirements { } )
             if correctAnswers == 3 && level.levelProgress == 1 {
-//                level.levelUp()
+                level.levelUp()
                 winOrLoose = true
                 playerWon = true
             }
