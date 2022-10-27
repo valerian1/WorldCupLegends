@@ -1,4 +1,4 @@
-//
+
 //  GameOn.swift
 //  World Cup Legends
 //
@@ -14,8 +14,8 @@ struct GameOn: View {
     @State private var playerWon = false
     // In game mode views
     @State private var playerLostMessage = ""
-    @State private var playerGold = 100
-    @State private var timeRemaining = 145
+    @State private var playerGold = 3
+    @State private var timeRemaining = 90
     @State private var rightOrWrong = "🧐"
     @State private var timeRunning = false
     @State private var nextQuestionTime = 2
@@ -39,7 +39,7 @@ struct GameOn: View {
     @State var wrongAnswers = 0
             
     var body: some View {
-        ZStack {
+        VStack {
             if onMenu {
                 // MENU
                 Menu()
@@ -50,6 +50,11 @@ struct GameOn: View {
                         VStack {
                             Spacer()
                             Text("Congrats you qualified")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.black)
+                                .padding(10)
+                                .background(.green)
+                                .cornerRadius(10)
                             
                             Button {
                                 play()
@@ -72,7 +77,13 @@ struct GameOn: View {
                         VStack {
                             Spacer()
                             Text(playerLostMessage)
+                                .fontWeight(.heavy)
+                                .foregroundColor(.black)
+                                .padding(10)  // Check it out later
+                                .background(.orange)
+                                .cornerRadius(10)
                                 .fixedSize(horizontal: false, vertical: true)
+                                .cornerRadius(10)
                                 .padding()
                             
                             Button {
@@ -94,16 +105,24 @@ struct GameOn: View {
                 }
             } else {
                 // GAME ON
-                VStack(alignment: .center, spacing: 10) {
+//                NavigationView {
+                
+                VStack(alignment: .center, spacing: 2) {
                     Spacer()
+
                     // Points, Time remaining, menu
-                    HStack(alignment: .center, spacing: 70) {
+                    
+                    Group { // group open
+                    Spacer()
+
+                    HStack(alignment: .top, spacing: 70) {
                         HStack {
                             Image("gold2")
                                 .resizable()
                                 .frame(width: 25, height: 25)
                             Text("\(playerGold)")
                                 .fontWeight(.bold)
+                                .foregroundColor(.black)
                         }
                         
                         Text("Time: \(timeRemaining)")
@@ -140,21 +159,46 @@ struct GameOn: View {
                         }
                         .foregroundColor(.black)
                     }
-                
+//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                        
+                    } // Group close
+                    
+                    Spacer()
+                    
+                    Group {
                     // Question
-                    Image("\(questionImage)")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 360, height: 360)
+                        
+                        GeometryReader { geo in
+                            Image("\(questionImage)")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: geo.size.width * 0.9)
+                                .frame(width: geo.size.width, height: geo.size.height)
+                        }
                     
-                    Text(rightOrWrong)
+                        
+//                        .frame(minWidth: 190, idealWidth: 360, maxWidth: 360, minHeight: 190, idealHeight: 360, maxHeight: 360, alignment: .center)
+//                        .frame(width: 360, height: 360)
                     
+                    // rightOrWrong was here ....................
+                        
+                    } // Group 2
+                    
+                    Group {
                     VStack {
                         Text(questionLabel)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                     .font(.largeTitle)
                     .padding()
+                    
+                    Text(rightOrWrong)
+                        
+                    } // Group 3
+                    
+
+                    
+                    Group {
                     // Answer buttons
                     LazyVGrid(columns: columns, spacing: 10) {
                         ForEach(answerList, id: \.self) { answer in
@@ -167,15 +211,24 @@ struct GameOn: View {
                         }
                     }
                     Spacer()
+                    
+                    } // Group 4
+
                 }
                 .background(.white)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding()
                 .onAppear {
                     play()
                     print("On appear")
                     print("Player level in LevelsBrain: \(level.playerLevel.levelProgress)")
                     print("Level 2 unlocked in LevelsBrain: \(level.playerLevel.level2Unlocked)")
                 }
-                Spacer()
+//                Spacer()
+//                } // NavigationView close
+//                .ignoresSafeArea()
+//                .navigationBarHidden(true)
+                
             }
         }
     }
@@ -190,7 +243,7 @@ struct GameOn: View {
             correctAnswers += 1
             rightOrWrong = "Correct 👏"
                                     // Must add level requirements ( if  correctAnswers == levelRequirements { } )
-            if correctAnswers == 3 && level.playerLevel.levelProgress == 1 {
+            if correctAnswers == 3 && level.playerLevel.levelProgress < 5 {
                 level.levelUp()
                 print("levelUp(). player level: \(level.playerLevel.levelProgress)")
                 winOrLoose = true
@@ -208,7 +261,7 @@ struct GameOn: View {
         }
         nextQuestionTimeRunning.toggle()
         print("answer button pressed")
-}
+    }
     
     func askQuestion() {
         questionLabel = quiz.getQuestionText()
@@ -239,7 +292,9 @@ struct GameOn: View {
         
         nextQuestionTimeRunning = false
         rightOrWrong = "🧐"
-        timeRemaining = 145
+        timeRemaining = 90
+        correctAnswers = 0
+        wrongAnswers = 0
     
         answerList.shuffle()
         askQuestion()
@@ -252,10 +307,12 @@ struct GameOn: View {
     
     // Play again if player lost
     func restart() {
+        if playerGold <= 0 {
+            playerGold = 3
+        }
         nextQuestionTimeRunning = false
         rightOrWrong = "🧐"
-        timeRemaining = 230
-        playerGold = 3
+        timeRemaining = 90
         answerList.shuffle()
         askQuestion()
         generateAnswers()
@@ -297,5 +354,15 @@ extension View {
 struct GameOn_Previews: PreviewProvider {
     static var previews: some View {
         GameOn()
+            .previewDevice("iPhone 13")
+//
+//        GameOn()
+//            .previewDevice("iPhone 13 Pro Max")
+//
+//        GameOn()
+//            .previewDevice("iPhone 13 mini")
+//
+//        GameOn()
+//            .previewDevice("iPhone 8")
     }
 }

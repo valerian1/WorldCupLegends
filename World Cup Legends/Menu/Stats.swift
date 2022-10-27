@@ -1,4 +1,4 @@
-//
+
 //  Stats.swift
 //  World Cup Legends
 //
@@ -16,12 +16,12 @@ struct Stats: View {
             if onMenu {
                 Menu()
             } else {
-                
                 Button {
                     onMenu.toggle()
                 } label: {
                     Text("Menu")
                 }
+                .menuButtons()
             }
         }
     }

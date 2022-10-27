@@ -1,4 +1,3 @@
-//
 //  Menu.swift
 //  World Cup Legends
 //
@@ -66,7 +65,7 @@ struct MenuButtonStyle: ViewModifier {
         content
             .frame(width: 270, height: 60)
             .foregroundColor(.white)
-            .background(.blue)
+            .background(.black)
             .cornerRadius(10)
             .font(.title)
             .padding(6)

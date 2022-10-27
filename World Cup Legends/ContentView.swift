@@ -1,4 +1,4 @@
-//
+
 //  ContentView.swift
 //  World Cup Legends
 //
@@ -17,7 +17,7 @@ struct ContentView: View {
         } else {
             VStack {
                 Spacer()
-                Text("Let's see how much you know about World Cup legends")
+                Text("Let's see how much you know about World Cup legends. You have 90 seconds for each level")
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                     .padding(10)

@@ -1,4 +1,4 @@
-//
+
 //  Levels.swift
 //  World Cup Legends
 //
@@ -26,6 +26,7 @@ struct LevelsView: View {
                     startPlayerLevel(playerLevel: "level 1")
                 } label: {
                     Text("Level 1")
+                    Image(systemName: "play")
                 }
                 .answerButtonStyle()
                 
@@ -34,7 +35,7 @@ struct LevelsView: View {
                     startPlayerLevel(playerLevel: "level 2")
                 } label: {
                     Text("Level 2")
-                    Image(systemName: level.playerLevel.level2Unlocked ? "" : "lock.fill")
+                    Image(systemName: level.playerLevel.level2Unlocked ? "play" : "lock.fill")
                 }
                 .answerButtonStyle()
                 
@@ -43,7 +44,7 @@ struct LevelsView: View {
                     startPlayerLevel(playerLevel: "level 3")
                 } label: {
                     Text("Level 3")
-                    Image(systemName: level.playerLevel.level3Unlocked ? "" : "lock.fill")
+                    Image(systemName: level.playerLevel.level3Unlocked ? "play" : "lock.fill")
                 }
                 .answerButtonStyle()
 
@@ -52,7 +53,7 @@ struct LevelsView: View {
                     startPlayerLevel(playerLevel: "level 4")
                 } label: {
                     Text("Level 4")
-                    Image(systemName: level.playerLevel.level4Unlocked ? "" : "lock.fill")
+                    Image(systemName: level.playerLevel.level4Unlocked ? "play" : "lock.fill")
                 }
                 .answerButtonStyle()
 
@@ -61,7 +62,7 @@ struct LevelsView: View {
                     startPlayerLevel(playerLevel: "level 5")
                 } label: {
                     Text("Level 5")
-                    Image(systemName: level.playerLevel.level5Unlocked ? "" : "lock.fill")
+                    Image(systemName: level.playerLevel.level5Unlocked ? "play" : "lock.fill")
                 }
                 .answerButtonStyle()
 

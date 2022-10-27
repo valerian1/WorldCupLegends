@@ -1,4 +1,4 @@
-//
+
 //  Store.swift
 //  World Cup Legends
 //
@@ -19,23 +19,38 @@ struct Store: View {
             } else {
                 VStack {
                     Button {
-
-                    } label: {
-                        Text("Get 20 gold")
-                    }
-                    .foregroundColor(.green)
-                    .background(.black)
-                    .font(.largeTitle)
-                    .padding()
-
-                    
-                    Button {
                         onMenu.toggle()
                     } label: {
                         Text("Menu")
                     }
-                    .foregroundColor(.black)
+                    .menuButtons()
+                    
+                    Button {
+                        // Code
+                    } label: {
+                        Text("Get 20 Gold")
+                    }
+                    .menuButtons()
                     .background(.green)
+                    .padding()
+                    
+                    Button {
+                        // Code
+                    } label: {
+                        Text("Get 50 Gold")
+                    }
+                    .menuButtons()
+                    .background(.green)
+                    .padding()
+                    
+                    Button {
+                        // Code
+                    } label: {
+                        Text("Get 100 Gold")
+                    }
+                    .menuButtons()
+                    .background(.green)
+                    .padding()
                 }
             }
             Spacer()
