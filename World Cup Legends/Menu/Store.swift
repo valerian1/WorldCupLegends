@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Store: View {
     @State private var onMenu = false
-    var wallet = GameOn()
+    @ObservedObject var gold: Gold
     
     var body: some View {
         VStack {
@@ -26,7 +26,16 @@ struct Store: View {
                     .menuButtons()
                     
                     Button {
-                        // Code to buy gold
+                        gold.goldAmount.amount += 10
+                    } label: {
+                        Text("Get 10 Gold")
+                    }
+                    .menuButtons()
+                    .background(.yellow)
+                    .padding()
+                    
+                    Button {
+                        gold.goldAmount.amount += 20
                     } label: {
                         Text("Get 20 Gold")
                     }
@@ -35,18 +44,9 @@ struct Store: View {
                     .padding()
                     
                     Button {
-                        // Code to buy gold
+                        gold.goldAmount.amount += 50
                     } label: {
                         Text("Get 50 Gold")
-                    }
-                    .menuButtons()
-                    .background(.yellow)
-                    .padding()
-                    
-                    Button {
-                        // Code to buy gold
-                    } label: {
-                        Text("Get 100 Gold")
                     }
                     .menuButtons()
                     .background(.yellow)
@@ -66,6 +66,6 @@ struct Store: View {
 
 struct Store_Previews: PreviewProvider {
     static var previews: some View {
-        Store()
+        Store(gold: Gold())
     }
 }

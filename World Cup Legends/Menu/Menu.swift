@@ -17,7 +17,7 @@ struct Menu: View {
             if levelScreen {
                 LevelsView()
             } else if inStore {
-                Store()
+                Store(gold: Gold()) // ??
             } else if inStats {
                 Stats()
             } else {

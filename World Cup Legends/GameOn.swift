@@ -14,7 +14,7 @@ struct GameOn: View {
     @State private var playerWon = false
     // In game mode views
     @State private var playerLostMessage = ""
-    @State private var playerGold = 3
+    @StateObject var playerGold = Gold()
     @State private var timeRemaining = 90
     @State private var rightOrWrong = "🧐"
     @State private var timeRunning = false
@@ -117,7 +117,7 @@ struct GameOn: View {
                             Image("gold2")
                                 .resizable()
                                 .frame(width: 25, height: 25)
-                            Text("\(playerGold)")
+                            Text("\(playerGold.goldAmount.amount)")
                                 .fontWeight(.bold)
                                 .foregroundColor(.black)
                         }
@@ -219,7 +219,7 @@ struct GameOn: View {
         let userGotItRight = quiz.checkAnswer(userAnswer)
         
         if userGotItRight {
-            playerGold += 1
+            playerGold.goldAmount.amount += 1
             correctAnswers += 1
             rightOrWrong = "Correct 👏"
             
@@ -230,8 +230,8 @@ struct GameOn: View {
                 playerWon = true
             }
         } else {
-            playerGold -= 1
-            if playerGold < 0 {
+            playerGold.goldAmount.amount -= 1
+            if playerGold.goldAmount.amount < 0 {
                 wrongAnswers += 1
                 if wrongAnswers == 1 {
                     playerLoose()
@@ -287,8 +287,8 @@ struct GameOn: View {
     
     // Play again if player lost
     func restart() {
-        if playerGold <= 0 {
-            playerGold = 3
+        if playerGold.goldAmount.amount <= 0 {
+            playerGold.goldAmount.amount = 3
         }
         nextQuestionTimeRunning = false
         rightOrWrong = "🧐"
