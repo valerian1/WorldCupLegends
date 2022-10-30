@@ -65,8 +65,6 @@ struct LevelsView: View {
                     Image(systemName: level.playerLevel.level5Unlocked ? "play" : "lock.fill")
                 }
                 .answerButtonStyle()
-
-                
             }
             Spacer()
         }

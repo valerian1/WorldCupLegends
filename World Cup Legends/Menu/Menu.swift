@@ -41,6 +41,20 @@ struct Menu: View {
                     Text("Stats")
                 }
                 .menuButtons()
+                
+                Button {
+                    // Code to restore
+                } label: {
+                    Text("Restore")
+                }
+                .menuButtons()
+                
+                Button {
+                    // Code to reset all
+                } label: {
+                    Text("Reset All")
+                }
+                .menuButtons()
             }
             Spacer()
         }

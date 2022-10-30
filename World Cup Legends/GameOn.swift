@@ -79,7 +79,7 @@ struct GameOn: View {
                             Text(playerLostMessage)
                                 .fontWeight(.heavy)
                                 .foregroundColor(.black)
-                                .padding(10)  // Check it out later
+                                .padding(10)
                                 .background(.orange)
                                 .cornerRadius(10)
                                 .fixedSize(horizontal: false, vertical: true)
@@ -96,7 +96,7 @@ struct GameOn: View {
                             Spacer()
                         }
                         .background(
-                            Image("startScreen")
+                            Image("background")
                                 .resizable()
                                 .scaledToFill()
                         )
@@ -105,14 +105,11 @@ struct GameOn: View {
                 }
             } else {
                 // GAME ON
-//                NavigationView {
-                
                 VStack(alignment: .center, spacing: 2) {
                     Spacer()
 
                     // Points, Time remaining, menu
-                    
-                    Group { // group open
+                    Group {
                     Spacer()
 
                     HStack(alignment: .top, spacing: 70) {
@@ -150,7 +147,6 @@ struct GameOn: View {
                                 }
                             }
                         
-
                         Button {
                             onMenu.toggle()
                         } label: {
@@ -159,14 +155,12 @@ struct GameOn: View {
                         }
                         .foregroundColor(.black)
                     }
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
                         
-                    } // Group close
+                    }
                     
                     Spacer()
                     
                     Group {
-                    // Question
                         
                         GeometryReader { geo in
                             Image("\(questionImage)")
@@ -175,14 +169,7 @@ struct GameOn: View {
                                 .frame(width: geo.size.width * 0.9)
                                 .frame(width: geo.size.width, height: geo.size.height)
                         }
-                    
-                        
-//                        .frame(minWidth: 190, idealWidth: 360, maxWidth: 360, minHeight: 190, idealHeight: 360, maxHeight: 360, alignment: .center)
-//                        .frame(width: 360, height: 360)
-                    
-                    // rightOrWrong was here ....................
-                        
-                    } // Group 2
+                    }
                     
                     Group {
                     VStack {
@@ -194,9 +181,7 @@ struct GameOn: View {
                     
                     Text(rightOrWrong)
                         
-                    } // Group 3
-                    
-
+                    }
                     
                     Group {
                     // Answer buttons
@@ -212,8 +197,7 @@ struct GameOn: View {
                     }
                     Spacer()
                     
-                    } // Group 4
-
+                    }
                 }
                 .background(.white)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -225,10 +209,6 @@ struct GameOn: View {
                     print("Level 2 unlocked in LevelsBrain: \(level.playerLevel.level2Unlocked)")
                 }
 //                Spacer()
-//                } // NavigationView close
-//                .ignoresSafeArea()
-//                .navigationBarHidden(true)
-                
             }
         }
     }
@@ -242,8 +222,8 @@ struct GameOn: View {
             playerGold += 1
             correctAnswers += 1
             rightOrWrong = "Correct 👏"
-                                    // Must add level requirements ( if  correctAnswers == levelRequirements { } )
-            if correctAnswers == 3 && level.playerLevel.levelProgress < 5 {
+            
+            if correctAnswers == 13 && level.playerLevel.levelProgress < 5 {
                 level.levelUp()
                 print("levelUp(). player level: \(level.playerLevel.levelProgress)")
                 winOrLoose = true
@@ -292,7 +272,7 @@ struct GameOn: View {
         
         nextQuestionTimeRunning = false
         rightOrWrong = "🧐"
-        timeRemaining = 90
+        timeRemaining = 190
         correctAnswers = 0
         wrongAnswers = 0
     
@@ -322,9 +302,9 @@ struct GameOn: View {
     
     func playerLoose() {
         if timeRemaining == 0 {
-            playerLostMessage = "You ran out of time, try again"
+            playerLostMessage = "You ran out of time"
         } else {
-            playerLostMessage = "You didn’t qualify, try again"
+            playerLostMessage = "You didn’t qualify"
         }
         winOrLoose = true
         playerWon = false
@@ -354,7 +334,7 @@ extension View {
 struct GameOn_Previews: PreviewProvider {
     static var previews: some View {
         GameOn()
-            .previewDevice("iPhone 13")
+//            .previewDevice("iPhone 13")
 //
 //        GameOn()
 //            .previewDevice("iPhone 13 Pro Max")

@@ -9,7 +9,6 @@ import Foundation
 
 class LevelsBrain: ObservableObject {
     let maxLevel = 5
-//    var currentLevel = 1
     
     @Published var playerLevel = Level() {
         didSet {
@@ -40,22 +39,18 @@ class LevelsBrain: ObservableObject {
 
         if playerLevel.levelProgress == 2 {
             playerLevel.level2Unlocked = true
-//            currentLevel = 2
             print("levelUp(). Level 2 unlocked in LevelsBrain: \(playerLevel.level2Unlocked)")
         }
         if playerLevel.levelProgress == 3 {
             playerLevel.level3Unlocked = true
-//            currentLevel = 3
             print("levelUp(). Level 3 unlocked in LevelsBrain: \(playerLevel.level3Unlocked)")
         }
         if playerLevel.levelProgress == 4 {
             playerLevel.level4Unlocked = true
-//            currentLevel = 4
             print("levelUp(). Level 4 unlocked in LevelsBrain: \(playerLevel.level4Unlocked)")
         }
         if playerLevel.levelProgress == 5 {
             playerLevel.level5Unlocked = true
-//            currentLevel = 5
             print("levelUp(). Level 5 unlocked in LevelsBrain: \(playerLevel.level5Unlocked)")
         }
 

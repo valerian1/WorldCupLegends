@@ -26,30 +26,30 @@ struct Store: View {
                     .menuButtons()
                     
                     Button {
-                        // Code
+                        // Code to buy gold
                     } label: {
                         Text("Get 20 Gold")
                     }
                     .menuButtons()
-                    .background(.green)
+                    .background(.yellow)
                     .padding()
                     
                     Button {
-                        // Code
+                        // Code to buy gold
                     } label: {
                         Text("Get 50 Gold")
                     }
                     .menuButtons()
-                    .background(.green)
+                    .background(.yellow)
                     .padding()
                     
                     Button {
-                        // Code
+                        // Code to buy gold
                     } label: {
                         Text("Get 100 Gold")
                     }
                     .menuButtons()
-                    .background(.green)
+                    .background(.yellow)
                     .padding()
                 }
             }
