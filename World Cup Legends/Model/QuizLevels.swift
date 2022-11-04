@@ -50,7 +50,7 @@ struct QuizLevels {
         Question(id: UUID(), q: "Which one is the only team to have played in each and every FIFA World Cup?", img: "WC1930", a: "Brazil", pa1: "Germany", pa2: "Spain", pa3: "Argentina"),
         Question(id: UUID(), q: "The first World Cup held in 1930 was won by?", img: "WC1930", a: "Uruguay", pa1: "Brazil", pa2: "England", pa3: "Argentina"),
         Question(id: UUID(), q: "The youngest player to score a World Cup goal is?", img: "goalImage2", a: "Pele", pa1: "Maradona", pa2: "Fabregas", pa3: "Messi"),
-        Question(id: UUID(), q: "Germany’s Miroslav Klose has scored the most goals in World Cups. How many goals?", img: "Klose", a: "16", pa1: "15", pa2: "11", pa3: "10"),
+        Question(id: UUID(), q: "Germany’s Miroslav Klose has scored the most goals in World Cups. How many goals?", img: "Klose", a: "16", pa1: "15", pa2: "19", pa3: "18"),
         Question(id: UUID(), q: "The tournament was canceled in 1942 and 1946 because of?", img: "estadioCentenario1930", a: "World War II", pa1: "Influenza", pa2: "Volcano", pa3: "Earthquake"),
         Question(id: UUID(), q: "Which team has scored the most goals at all World Cup games put together; 224 in all?", img: "goalImage2", a: "Brazil", pa1: "Germany", pa2: "Spain", pa3: "Nigeria"),
         Question(id: UUID(), q: "Brazil has scored the most goals at all World Cup games, how many goals?", img: "Neymar", a: "224", pa1: "222", pa2: "240", pa3: "242"),

@@ -17,7 +17,7 @@ struct ContentView: View {
         } else {
             VStack {
                 Spacer()
-                Text("Let's see how much you know about World Cup legends. You have 90 seconds for each level")
+                Text("Let's see how much you know about World Cup legends. You have 90 seconds in each round.")
                     .fontWeight(.heavy)
                     .foregroundColor(.black)
                     .padding(10)
@@ -29,7 +29,7 @@ struct ContentView: View {
                 Button {
                     isPlayng.toggle()
                 } label: {
-                    Text("Start Quiz")
+                    Text("Start")
                 }
                 .menuButtons()
                 .cornerRadius(10)

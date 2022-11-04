@@ -9,7 +9,7 @@ import SwiftUI
 struct Menu: View {
     @State private var levelScreen = false
     @State private var inStore = false
-    @State private var inStats = false
+//    @State private var inStats = false
     
     var body: some View {
         VStack {
@@ -18,8 +18,6 @@ struct Menu: View {
                 LevelsView()
             } else if inStore {
                 Store(gold: Gold()) // ??
-            } else if inStats {
-                Stats()
             } else {
                 Button {
                     levelScreen.toggle()
@@ -28,29 +26,31 @@ struct Menu: View {
                 }
                 .menuButtons()
 
-                Button {
-                    inStore.toggle()
-                } label: {
-                    Text("Store")
-                }
-                .menuButtons()
+//                Button {
+//                    inStore.toggle()
+//                } label: {
+//                    Text("Store")
+//                }
+//                .menuButtons()
+                
+//                Button {
+//                    inStats.toggle()
+//                } label: {
+//                    Text("Stats")
+//                }
+//                .menuButtons()
+                
+//                Button {
+//                    // Code to restore
+//                } label: {
+//                    Text("Restore")
+//                }
+//                .menuButtons()
+                
+                Spacer()
                 
                 Button {
-                    inStats.toggle()
-                } label: {
-                    Text("Stats")
-                }
-                .menuButtons()
-                
-                Button {
-                    // Code to restore
-                } label: {
-                    Text("Restore")
-                }
-                .menuButtons()
-                
-                Button {
-                    // Code to reset all
+                    reset()
                 } label: {
                     Text("Reset All")
                 }
@@ -64,6 +64,11 @@ struct Menu: View {
                 .scaledToFill()
         )
         .ignoresSafeArea()
+    }
+    
+    func reset() {
+        Gold().goldAmount.amount = 3
+        LevelsBrain().resetLevels()
     }
 }
 

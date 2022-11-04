@@ -56,5 +56,12 @@ class LevelsBrain: ObservableObject {
 
         print("levelUp(). Level in LevelsBrain: \(playerLevel.levelProgress)")
     }
+    
+    func resetLevels() {
+        playerLevel.level2Unlocked = false
+        playerLevel.level3Unlocked = false
+        playerLevel.level4Unlocked = false
+        playerLevel.level5Unlocked = false
+    }
 }
 

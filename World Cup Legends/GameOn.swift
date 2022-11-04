@@ -12,9 +12,9 @@ struct GameOn: View {
     @State private var onMenu = false
     @State private var winOrLoose = false
     @State private var playerWon = false
-    // In game mode views
-    @State private var playerLostMessage = ""
+    // While playing views
     @StateObject var playerGold = Gold()
+    @State private var playerLostMessage = ""
     @State private var timeRemaining = 90
     @State private var rightOrWrong = "🧐"
     @State private var timeRunning = false
@@ -24,7 +24,7 @@ struct GameOn: View {
     // Questions
     @State private var questionLabel = ""
     @State private var questionImage = "Maradona"
-    // Possible answers
+    // Answers
     @State private var correctAnswer = ""
     @State private var fakeAnswer1 = ""
     @State private var fakeAnswer2 = ""
@@ -150,6 +150,7 @@ struct GameOn: View {
                         Button {
                             onMenu.toggle()
                         } label: {
+//                            Image(systemName: "line.3.horizontal.circle")
                             Text("Menu")
                                 .fontWeight(.bold)
                         }
@@ -219,12 +220,12 @@ struct GameOn: View {
         let userGotItRight = quiz.checkAnswer(userAnswer)
         
         if userGotItRight {
-            playerGold.goldAmount.amount += 1
             correctAnswers += 1
             rightOrWrong = "Correct 👏"
             
-            if correctAnswers == 13 && level.playerLevel.levelProgress < 5 {
+            if correctAnswers == 5 && level.playerLevel.levelProgress < 5 {
                 level.levelUp()
+                playerGold.goldAmount.amount += 3
                 print("levelUp(). player level: \(level.playerLevel.levelProgress)")
                 winOrLoose = true
                 playerWon = true
@@ -272,7 +273,7 @@ struct GameOn: View {
         
         nextQuestionTimeRunning = false
         rightOrWrong = "🧐"
-        timeRemaining = 190
+        timeRemaining = 90
         correctAnswers = 0
         wrongAnswers = 0
     
