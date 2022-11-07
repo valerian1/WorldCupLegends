@@ -15,6 +15,7 @@
 		3004F7F528DB385800928F12 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004F7F428DB385800928F12 /* Question.swift */; };
 		3004F7F728DB39A500928F12 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004F7F628DB39A500928F12 /* QuizBrain.swift */; };
 		300E274728F9B8B3004BCEEA /* LevelsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E274628F9B8B3004BCEEA /* LevelsBrain.swift */; };
+		3042DCD1291957AA00655275 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3042DCD0291957AA00655275 /* Views.swift */; };
 		306884A528DCE644000A001D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306884A428DCE644000A001D /* Menu.swift */; };
 		306884A928DCEC0E000A001D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306884A828DCEC0E000A001D /* Store.swift */; };
 		306884AB28DCEDD2000A001D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306884AA28DCEDD2000A001D /* Stats.swift */; };
@@ -34,6 +35,7 @@
 		3004F7F428DB385800928F12 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3004F7F628DB39A500928F12 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		300E274628F9B8B3004BCEEA /* LevelsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsBrain.swift; sourceTree = "<group>"; };
+		3042DCD0291957AA00655275 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		306884A428DCE644000A001D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		306884A828DCEC0E000A001D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		306884AA28DCEDD2000A001D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				3004F7E628DB337200928F12 /* ContentView.swift */,
 				3004F7F228DB33EE00928F12 /* GameOn.swift */,
 				306884AC28DCF33F000A001D /* Menu */,
+				3042DCCF2919579000655275 /* Views */,
 				306884AD28DCF377000A001D /* Model */,
 				3004F7E828DB337400928F12 /* Assets.xcassets */,
 				3004F7EA28DB337400928F12 /* Preview Content */,
@@ -90,6 +93,14 @@
 				3004F7EB28DB337400928F12 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3042DCCF2919579000655275 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3042DCD0291957AA00655275 /* Views.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		306884AC28DCF33F000A001D /* Menu */ = {
@@ -196,6 +207,7 @@
 				306884A928DCEC0E000A001D /* Store.swift in Sources */,
 				3004F7F328DB33EE00928F12 /* GameOn.swift in Sources */,
 				3004F7F528DB385800928F12 /* Question.swift in Sources */,
+				3042DCD1291957AA00655275 /* Views.swift in Sources */,
 				306884AB28DCEDD2000A001D /* Stats.swift in Sources */,
 				3004F7E728DB337200928F12 /* ContentView.swift in Sources */,
 				3004F7E528DB337200928F12 /* World_Cup_LegendsApp.swift in Sources */,
@@ -336,6 +348,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -366,6 +379,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

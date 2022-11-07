@@ -150,9 +150,7 @@ struct GameOn: View {
                         Button {
                             onMenu.toggle()
                         } label: {
-//                            Image(systemName: "line.3.horizontal.circle")
-                            Text("Menu")
-                                .fontWeight(.bold)
+                            MenuButton()
                         }
                         .foregroundColor(.black)
                     }
@@ -309,26 +307,6 @@ struct GameOn: View {
         }
         winOrLoose = true
         playerWon = false
-    }
-}
-
-
-// View Modifiers
-struct AnswerButtonStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .frame(width: 170, height: 60)
-            .foregroundColor(.white)
-            .background(.black)
-            .cornerRadius(10)
-            .font(.title)
-            .padding(6)
-    }
-}
-
-extension View {
-    func answerButtonStyle() -> some View {
-        modifier(AnswerButtonStyle())
     }
 }
 
