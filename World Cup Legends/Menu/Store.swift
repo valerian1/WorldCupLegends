@@ -32,6 +32,7 @@ struct Store: View {
                     }
                     .menuButtons()
                     .background(.yellow)
+                    .cornerRadius(12)
                     .padding()
                     
                     Button {
@@ -41,6 +42,7 @@ struct Store: View {
                     }
                     .menuButtons()
                     .background(.yellow)
+                    .cornerRadius(12)
                     .padding()
                     
                     Button {
@@ -50,6 +52,7 @@ struct Store: View {
                     }
                     .menuButtons()
                     .background(.yellow)
+                    .cornerRadius(12)
                     .padding()
                 }
             }

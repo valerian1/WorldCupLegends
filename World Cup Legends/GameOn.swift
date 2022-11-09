@@ -14,14 +14,14 @@ struct GameOn: View {
     @State private var playerWon = false
     // While playing views
     @StateObject var playerGold = Gold()
-    @State private var playerLostMessage = ""
+    @State private var playerResultMessage = ""
     @State private var timeRemaining = 90
     @State private var rightOrWrong = "🧐"
     @State private var timeRunning = false
     @State private var nextQuestionTime = 2
     @State private var nextQuestionTimeRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    // Questions
+    // Question
     @State private var questionLabel = ""
     @State private var questionImage = "Maradona"
     // Answers
@@ -37,19 +37,17 @@ struct GameOn: View {
     // Answers counters
     @State var correctAnswers = 0
     @State var wrongAnswers = 0
-            
+    
     var body: some View {
         VStack {
             if onMenu {
-                // MENU
                 Menu()
             } else if winOrLoose {
                 VStack {
-                    // LEVEL COMPLETE OR LOST
                     if playerWon {
                         VStack {
                             Spacer()
-                            Text("Congrats you qualified")
+                            Text(playerResultMessage)
                                 .fontWeight(.heavy)
                                 .foregroundColor(.black)
                                 .padding(10)
@@ -58,9 +56,6 @@ struct GameOn: View {
                             
                             Button {
                                 play()
-                                print("nextLevel() called, Player level: \(level.playerLevel.levelProgress)")
-                                print("nextLevel() called, Player level 2 unlocked: \(level.playerLevel.level2Unlocked)")
-
                             } label: {
                                 Text("Continue")
                             }
@@ -76,7 +71,7 @@ struct GameOn: View {
                     } else {
                         VStack {
                             Spacer()
-                            Text(playerLostMessage)
+                            Text(playerResultMessage)
                                 .fontWeight(.heavy)
                                 .foregroundColor(.black)
                                 .padding(10)
@@ -107,60 +102,59 @@ struct GameOn: View {
                 // GAME ON
                 VStack(alignment: .center, spacing: 2) {
                     Spacer()
-
+                    
                     // Points, Time remaining, menu
                     Group {
-                    Spacer()
-
-                    HStack(alignment: .top, spacing: 70) {
-                        HStack {
-                            Image("gold2")
-                                .resizable()
-                                .frame(width: 25, height: 25)
-                            Text("\(playerGold.goldAmount.amount)")
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                        }
+                        Spacer()
                         
-                        Text("Time: \(timeRemaining)")
-                            .foregroundColor(.orange)
-                            .fontWeight(.heavy)
-                            .frame(width: 100, height: 40, alignment: .center)
-                            .background(.black)
-                            .cornerRadius(50)
-                            .onReceive(timer) { _ in
-                                if timeRemaining > 0 && timeRunning {
-                                    timeRemaining -= 1
-                                    
-                                    if timeRemaining == 0 {
-                                        playerLoose()
-                                    }
-                                    
-                                    if nextQuestionTimeRunning {
-                                        nextQuestionTime -= 1
-                                        if nextQuestionTime == 0 {
-                                            updateQuestion()
-                                        }
-                                    }
-                                } else {
-                                    timeRunning = false
-                                }
+                        HStack(alignment: .top, spacing: 70) {
+                            HStack {
+                                Image("gold2")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                Text("\(playerGold.goldAmount.amount)")
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
                             }
-                        
-                        Button {
-                            onMenu.toggle()
-                        } label: {
-                            MenuButton()
+                            
+                            Text("Time: \(timeRemaining)")
+                                .foregroundColor(.orange)
+                                .fontWeight(.heavy)
+                                .frame(width: 100, height: 35, alignment: .center)
+                                .background(.black)
+                                .cornerRadius(60)
+                                .onReceive(timer) { _ in
+                                    if timeRemaining > 0 && timeRunning {
+                                        timeRemaining -= 1
+                                        
+                                        if timeRemaining == 0 {
+                                            playerLoose()
+                                        }
+                                        
+                                        if nextQuestionTimeRunning {
+                                            nextQuestionTime -= 1
+                                            if nextQuestionTime == 0 {
+                                                updateQuestion()
+                                            }
+                                        }
+                                    } else {
+                                        timeRunning = false
+                                    }
+                                }
+                            
+                            Button {
+                                onMenu.toggle()
+                            } label: {
+                                MenuButton()
+                            }
+                            .foregroundColor(.black)
+                            .padding(7)
                         }
-                        .foregroundColor(.black)
-                    }
-                        
                     }
                     
                     Spacer()
                     
                     Group {
-                        
                         GeometryReader { geo in
                             Image("\(questionImage)")
                                 .resizable()
@@ -171,48 +165,44 @@ struct GameOn: View {
                     }
                     
                     Group {
-                    VStack {
-                        Text(questionLabel)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                    .font(.largeTitle)
-                    .padding()
-                    
-                    Text(rightOrWrong)
+                        VStack {
+                            Text(questionLabel)
+                                .fixedSize(horizontal: false, vertical: true)
+                        }
+                        .font(.largeTitle)
+                        .padding()
                         
+                        Text(rightOrWrong)
                     }
                     
                     Group {
-                    // Answer buttons
-                    LazyVGrid(columns: columns, spacing: 10) {
-                        ForEach(answerList, id: \.self) { answer in
-                            Button {
-                                answerButtonPressed(button: answer)
-                            } label: {
-                                Text(answer)
-                                    .answerButtonStyle()
+                        // Answer buttons
+                        LazyVGrid(columns: columns, spacing: 10) {
+                            ForEach(answerList, id: \.self) { answer in
+                                Button {
+                                    answerButtonPressed(button: answer)
+                                } label: {
+                                    Text(answer)
+                                        .answerButtonStyle()
+                                }
                             }
                         }
-                    }
-                    Spacer()
-                    
+                        Spacer()
                     }
                 }
                 .background(.white)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .padding()
                 .onAppear {
+                    
                     play()
-                    print("On appear")
-                    print("Player level in LevelsBrain: \(level.playerLevel.levelProgress)")
-                    print("Level 2 unlocked in LevelsBrain: \(level.playerLevel.level2Unlocked)")
+                    
                 }
-//                Spacer()
             }
         }
     }
     
-
+    
     func answerButtonPressed(button: String) {
         let userAnswer = button
         let userGotItRight = quiz.checkAnswer(userAnswer)
@@ -222,11 +212,13 @@ struct GameOn: View {
             rightOrWrong = "Correct 👏"
             
             if correctAnswers == 5 && level.playerLevel.levelProgress < 5 {
-                level.levelUp()
-                playerGold.goldAmount.amount += 3
-                print("levelUp(). player level: \(level.playerLevel.levelProgress)")
-                winOrLoose = true
-                playerWon = true
+                playerQualified()
+            } else {
+                if correctAnswers == 5 {
+                    playerResultMessage = "Congrats quiz complete 🥳🥇🏆"
+                    winOrLoose = true
+                    playerWon = true
+                }
             }
         } else {
             playerGold.goldAmount.amount -= 1
@@ -239,7 +231,6 @@ struct GameOn: View {
             rightOrWrong = "Wrong 😱"
         }
         nextQuestionTimeRunning.toggle()
-        print("answer button pressed")
     }
     
     func askQuestion() {
@@ -274,14 +265,12 @@ struct GameOn: View {
         timeRemaining = 90
         correctAnswers = 0
         wrongAnswers = 0
-    
+        
         answerList.shuffle()
         askQuestion()
         generateAnswers()
         timeRunning.toggle()
         winOrLoose = false
-
-        print("play(). level progress in Level class: \(level.playerLevel.levelProgress)")
     }
     
     // Play again if player lost
@@ -299,11 +288,19 @@ struct GameOn: View {
         winOrLoose = false
     }
     
+    func playerQualified() {
+            playerResultMessage = "Congrats you qualified"
+            level.levelUp()
+            playerGold.goldAmount.amount += 3
+            winOrLoose = true
+            playerWon = true
+    }
+    
     func playerLoose() {
         if timeRemaining == 0 {
-            playerLostMessage = "You ran out of time"
+            playerResultMessage = "You ran out of time"
         } else {
-            playerLostMessage = "You didn’t qualify"
+            playerResultMessage = "You didn’t qualify"
         }
         winOrLoose = true
         playerWon = false
@@ -313,15 +310,5 @@ struct GameOn: View {
 struct GameOn_Previews: PreviewProvider {
     static var previews: some View {
         GameOn()
-//            .previewDevice("iPhone 13")
-//
-//        GameOn()
-//            .previewDevice("iPhone 13 Pro Max")
-//
-//        GameOn()
-//            .previewDevice("iPhone 13 mini")
-//
-//        GameOn()
-//            .previewDevice("iPhone 8")
     }
 }

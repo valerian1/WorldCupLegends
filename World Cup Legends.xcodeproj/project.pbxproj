@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3004F7E528DB337200928F12 /* World_Cup_LegendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004F7E428DB337200928F12 /* World_Cup_LegendsApp.swift */; };
+		3004F7E528DB337200928F12 /* WorldCupLegendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004F7E428DB337200928F12 /* WorldCupLegendsApp.swift */; };
 		3004F7E728DB337200928F12 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004F7E628DB337200928F12 /* ContentView.swift */; };
 		3004F7E928DB337400928F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3004F7E828DB337400928F12 /* Assets.xcassets */; };
 		3004F7EC28DB337400928F12 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3004F7EB28DB337400928F12 /* Preview Assets.xcassets */; };
@@ -15,19 +15,19 @@
 		3004F7F528DB385800928F12 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004F7F428DB385800928F12 /* Question.swift */; };
 		3004F7F728DB39A500928F12 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3004F7F628DB39A500928F12 /* QuizBrain.swift */; };
 		300E274728F9B8B3004BCEEA /* LevelsBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E274628F9B8B3004BCEEA /* LevelsBrain.swift */; };
-		3042DCD1291957AA00655275 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3042DCD0291957AA00655275 /* Views.swift */; };
+		3042DCD1291957AA00655275 /* ButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3042DCD0291957AA00655275 /* ButtonViews.swift */; };
 		306884A528DCE644000A001D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306884A428DCE644000A001D /* Menu.swift */; };
 		306884A928DCEC0E000A001D /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306884A828DCEC0E000A001D /* Store.swift */; };
 		306884AB28DCEDD2000A001D /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306884AA28DCEDD2000A001D /* Stats.swift */; };
 		30CBF48528DDBB2400AF6E9F /* QuizLevels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBF48428DDBB2400AF6E9F /* QuizLevels.swift */; };
-		30CBF48728DDC43700AF6E9F /* LevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBF48628DDC43700AF6E9F /* LevelsView.swift */; };
+		30CBF48728DDC43700AF6E9F /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBF48628DDC43700AF6E9F /* Levels.swift */; };
 		30CBF48D28DE2F4100AF6E9F /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CBF48C28DE2F4100AF6E9F /* Level.swift */; };
 		30DD449228DF26D9007ECFB2 /* Gold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DD449128DF26D9007ECFB2 /* Gold.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3004F7E128DB337200928F12 /* World Cup Legends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "World Cup Legends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3004F7E428DB337200928F12 /* World_Cup_LegendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World_Cup_LegendsApp.swift; sourceTree = "<group>"; };
+		3004F7E428DB337200928F12 /* WorldCupLegendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldCupLegendsApp.swift; sourceTree = "<group>"; };
 		3004F7E628DB337200928F12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3004F7E828DB337400928F12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3004F7EB28DB337400928F12 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -35,12 +35,12 @@
 		3004F7F428DB385800928F12 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		3004F7F628DB39A500928F12 /* QuizBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
 		300E274628F9B8B3004BCEEA /* LevelsBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsBrain.swift; sourceTree = "<group>"; };
-		3042DCD0291957AA00655275 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		3042DCD0291957AA00655275 /* ButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViews.swift; sourceTree = "<group>"; };
 		306884A428DCE644000A001D /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		306884A828DCEC0E000A001D /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		306884AA28DCEDD2000A001D /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		30CBF48428DDBB2400AF6E9F /* QuizLevels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLevels.swift; sourceTree = "<group>"; };
-		30CBF48628DDC43700AF6E9F /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
+		30CBF48628DDC43700AF6E9F /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		30CBF48C28DE2F4100AF6E9F /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		30DD449128DF26D9007ECFB2 /* Gold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gold.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,7 +75,7 @@
 		3004F7E328DB337200928F12 /* World Cup Legends */ = {
 			isa = PBXGroup;
 			children = (
-				3004F7E428DB337200928F12 /* World_Cup_LegendsApp.swift */,
+				3004F7E428DB337200928F12 /* WorldCupLegendsApp.swift */,
 				3004F7E628DB337200928F12 /* ContentView.swift */,
 				3004F7F228DB33EE00928F12 /* GameOn.swift */,
 				306884AC28DCF33F000A001D /* Menu */,
@@ -98,7 +98,7 @@
 		3042DCCF2919579000655275 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3042DCD0291957AA00655275 /* Views.swift */,
+				3042DCD0291957AA00655275 /* ButtonViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,7 +109,7 @@
 				306884A428DCE644000A001D /* Menu.swift */,
 				306884A828DCEC0E000A001D /* Store.swift */,
 				306884AA28DCEDD2000A001D /* Stats.swift */,
-				30CBF48628DDC43700AF6E9F /* LevelsView.swift */,
+				30CBF48628DDC43700AF6E9F /* Levels.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30CBF48728DDC43700AF6E9F /* LevelsView.swift in Sources */,
+				30CBF48728DDC43700AF6E9F /* Levels.swift in Sources */,
 				30CBF48D28DE2F4100AF6E9F /* Level.swift in Sources */,
 				306884A528DCE644000A001D /* Menu.swift in Sources */,
 				30DD449228DF26D9007ECFB2 /* Gold.swift in Sources */,
@@ -207,10 +207,10 @@
 				306884A928DCEC0E000A001D /* Store.swift in Sources */,
 				3004F7F328DB33EE00928F12 /* GameOn.swift in Sources */,
 				3004F7F528DB385800928F12 /* Question.swift in Sources */,
-				3042DCD1291957AA00655275 /* Views.swift in Sources */,
+				3042DCD1291957AA00655275 /* ButtonViews.swift in Sources */,
 				306884AB28DCEDD2000A001D /* Stats.swift in Sources */,
 				3004F7E728DB337200928F12 /* ContentView.swift in Sources */,
-				3004F7E528DB337200928F12 /* World_Cup_LegendsApp.swift in Sources */,
+				3004F7E528DB337200928F12 /* WorldCupLegendsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,12 +342,11 @@
 				DEVELOPMENT_TEAM = 33YG475KJM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -373,12 +372,11 @@
 				DEVELOPMENT_TEAM = 33YG475KJM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.trivia-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

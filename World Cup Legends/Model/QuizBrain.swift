@@ -16,28 +16,22 @@ struct QuizBrain {
     
     mutating func updateLevel() {
         level = LevelsBrain().playerLevel.levelProgress
-        print("updateLevel() called in QuizBrain(), level: \(level)")
+        print("updateLevel() called in QuizBrain, is on level: \(level)")
     }
     
     mutating func checkLevel() {
-        print("checkLevel() called in QuizBrain")
         questionNumber = 0
         
         if level == 1 {
             quiz = QuizLevels().level1
-            print("level in QuizBrain after check: \(level)")
         } else if level == 2 {
             quiz = QuizLevels().level2
-            print("level in QuizBrain after check level 2: \(level)")
         } else if level == 3 {
             quiz = QuizLevels().level3
-            print("level in QuizBrain after check level 3: \(level)")
         } else if level == 4 {
             quiz = QuizLevels().level4
-            print("level in QuizBrain after check level 4: \(level)")
         } else if level == 5 {
             quiz = QuizLevels().level5
-            print("level in QuizBrain after check level 5: \(level)")
         }
     }
     

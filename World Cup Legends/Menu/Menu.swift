@@ -26,12 +26,12 @@ struct Menu: View {
                 }
                 .menuButtons()
 
-//                Button {
-//                    inStore.toggle()
-//                } label: {
-//                    Text("Store")
-//                }
-//                .menuButtons()
+                Button {
+                    inStore.toggle()
+                } label: {
+                    Text("Store")
+                }
+                .menuButtons()
                 
 //                Button {
 //                    inStats.toggle()

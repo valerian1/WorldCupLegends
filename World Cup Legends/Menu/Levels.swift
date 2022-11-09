@@ -22,7 +22,6 @@ struct LevelsView: View {
             } else {
                 
                 Button {
-                    print("level button 1 pressed")
                     startPlayerLevel(playerLevel: "level 1")
                 } label: {
                     Text("Level 1")
@@ -31,7 +30,6 @@ struct LevelsView: View {
                 .answerButtonStyle()
                 
                 Button {
-                    print("level button 2 pressed")
                     startPlayerLevel(playerLevel: "level 2")
                 } label: {
                     Text("Level 2")
@@ -40,7 +38,6 @@ struct LevelsView: View {
                 .answerButtonStyle()
                 
                 Button {
-                    print("level button 3 pressed")
                     startPlayerLevel(playerLevel: "level 3")
                 } label: {
                     Text("Level 3")
@@ -49,7 +46,6 @@ struct LevelsView: View {
                 .answerButtonStyle()
 
                 Button {
-                    print("level button 4 pressed")
                     startPlayerLevel(playerLevel: "level 4")
                 } label: {
                     Text("Level 4")
@@ -58,7 +54,6 @@ struct LevelsView: View {
                 .answerButtonStyle()
 
                 Button {
-                    print("level button 5 pressed")
                     startPlayerLevel(playerLevel: "level 5")
                 } label: {
                     Text("Level 5")
@@ -82,13 +77,11 @@ struct LevelsView: View {
         if playerChoice == "level 1" {
             level.playerLevel.levelProgress = 1
             playChosenLevel()
-            print("quiz level checked > Level 1 chosen")
         } else if playerChoice == "level 2" {
             
             if level.playerLevel.level2Unlocked {
                 level.playerLevel.levelProgress = 2
                 playChosenLevel()
-                print("quiz level checked > Level 2 chosen")
             } else {
                 print("You must unlock level 2 first")
             }
@@ -98,7 +91,6 @@ struct LevelsView: View {
             if level.playerLevel.level3Unlocked {
                 level.playerLevel.levelProgress = 3
                 playChosenLevel()
-                print("quiz level checked > Level 3 chosen")
             } else {
                 print("You must unlock level 3 first")
             }
@@ -109,7 +101,6 @@ struct LevelsView: View {
             if level.playerLevel.level4Unlocked {
                 level.playerLevel.levelProgress = 4
                 playChosenLevel()
-                print("quiz level checked > Level 4 chosen")
             } else {
                 print("You must unlock level 4 first")
             }
@@ -119,7 +110,6 @@ struct LevelsView: View {
             if level.playerLevel.level5Unlocked {
                 level.playerLevel.levelProgress = 5
                 playChosenLevel()
-                print("quiz level checked > Level 5 chosen")
             } else {
                 print("You must unlock level 5 first")
             }

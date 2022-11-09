@@ -39,22 +39,22 @@ class LevelsBrain: ObservableObject {
 
         if playerLevel.levelProgress == 2 {
             playerLevel.level2Unlocked = true
-            print("levelUp(). Level 2 unlocked in LevelsBrain: \(playerLevel.level2Unlocked)")
+            print("levelUp() Level 2 unlocked: \(playerLevel.level2Unlocked)")
         }
         if playerLevel.levelProgress == 3 {
             playerLevel.level3Unlocked = true
-            print("levelUp(). Level 3 unlocked in LevelsBrain: \(playerLevel.level3Unlocked)")
+            print("levelUp() Level 3 unlocked: \(playerLevel.level3Unlocked)")
         }
         if playerLevel.levelProgress == 4 {
             playerLevel.level4Unlocked = true
-            print("levelUp(). Level 4 unlocked in LevelsBrain: \(playerLevel.level4Unlocked)")
+            print("levelUp() Level 4 unlocked: \(playerLevel.level4Unlocked)")
         }
         if playerLevel.levelProgress == 5 {
             playerLevel.level5Unlocked = true
-            print("levelUp(). Level 5 unlocked in LevelsBrain: \(playerLevel.level5Unlocked)")
+            print("levelUp() Level 5 unlocked: \(playerLevel.level5Unlocked)")
         }
 
-        print("levelUp(). Level in LevelsBrain: \(playerLevel.levelProgress)")
+        print("levelUp() player level is: \(playerLevel.levelProgress)")
     }
     
     func resetLevels() {
