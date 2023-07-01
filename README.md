@@ -14,5 +14,6 @@ If the player answers questions correctly will unlock and pass to the next level
 
 ![image1](https://github.com/valerian1/WorldCupLegends/assets/64802873/62b7d0fe-1565-48c1-84e5-2aa068fb088b)
 
-
 ![image5](https://github.com/valerian1/WorldCupLegends/assets/64802873/d19f9aea-a18e-408a-b041-ea1163139328)
+
+![image3](https://github.com/valerian1/WorldCupLegends/assets/64802873/fa89c34f-25d5-4597-aeb9-42a5ba74dbca)
