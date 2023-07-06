@@ -78,7 +78,7 @@ struct QuizLevels {
         Question(id: UUID(), q: "What is the country with the smallest population to ever compete in the world cup?", img: "cup3", a: "Iceland", pa1: "Japan", pa2: "Switzerland", pa3: "Scotland"),
         Question(id: UUID(), q: "Which national team is nicknamed ‘the socceroos’?", img: "cup3", a: "Australia", pa1: "USA", pa2: "Scotland", pa3: "Canada"),
         Question(id: UUID(), q: "How many lions are on the emblem of England’s national team?", img: "England2022", a: "Three", pa1: "One", pa2: "Two", pa3: "Eleven"),
-        Question(id: UUID(), q: "What country was the first to wear names on the back of their shirts at World Cup Finals??", img: "cup", a: "England", pa1: "Germany", pa2: "France", pa3: "Netherlands"),
+        Question(id: UUID(), q: "What country was the first to wear names on the back of their shirts at World Cup Finals?", img: "cup", a: "England", pa1: "Germany", pa2: "France", pa3: "Netherlands"),
     ].shuffled()
     
     let level5 = [
