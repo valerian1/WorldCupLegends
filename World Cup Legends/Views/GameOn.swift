@@ -174,6 +174,8 @@ struct GameOn: View {
                         .padding()
                         
                         Text(rightOrWrong)
+                            .font(.title)
+                            .bold()
                     }
                     
                     Group {
