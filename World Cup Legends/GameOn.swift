@@ -150,6 +150,7 @@ struct GameOn: View {
                             .foregroundColor(.black)
                             .padding(7)
                         }
+                        .padding(.top, 15)
                     }
                     
                     Spacer()
