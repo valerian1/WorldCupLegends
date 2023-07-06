@@ -118,11 +118,11 @@ struct GameOn: View {
                             }
                             
                             Text("Time: \(timeRemaining)")
-                                .foregroundColor(.orange)
+                                .foregroundColor(.black)
                                 .fontWeight(.heavy)
-                                .frame(width: 100, height: 35, alignment: .center)
-                                .background(.black)
-                                .cornerRadius(60)
+//                                .frame(width: 100, height: 35, alignment: .center)
+//                                .background(.black)
+//                                .cornerRadius(60)
                                 .onReceive(timer) { _ in
                                     if timeRemaining > 0 && timeRunning {
                                         timeRemaining -= 1
