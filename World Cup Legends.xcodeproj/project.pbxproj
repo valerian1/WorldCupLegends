@@ -56,6 +56,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300164662A57069600A7399B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3042DCD0291957AA00655275 /* ButtonViews.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		300164682A5706D300A7399B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3004F7F628DB39A500928F12 /* QuizBrain.swift */,
+				300E274628F9B8B3004BCEEA /* LevelsBrain.swift */,
+				30CBF48428DDBB2400AF6E9F /* QuizLevels.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		3004F7D828DB337200928F12 = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				3004F7E428DB337200928F12 /* WorldCupLegendsApp.swift */,
-				3004F7E628DB337200928F12 /* ContentView.swift */,
-				3004F7F228DB33EE00928F12 /* GameOn.swift */,
-				306884AC28DCF33F000A001D /* Menu */,
 				3042DCCF2919579000655275 /* Views */,
+				300164682A5706D300A7399B /* ViewModel */,
 				306884AD28DCF377000A001D /* Model */,
 				3004F7E828DB337400928F12 /* Assets.xcassets */,
 				3004F7EA28DB337400928F12 /* Preview Content */,
@@ -98,7 +114,10 @@
 		3042DCCF2919579000655275 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3042DCD0291957AA00655275 /* ButtonViews.swift */,
+				3004F7E628DB337200928F12 /* ContentView.swift */,
+				3004F7F228DB33EE00928F12 /* GameOn.swift */,
+				306884AC28DCF33F000A001D /* Menu */,
+				300164662A57069600A7399B /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -117,12 +136,9 @@
 		306884AD28DCF377000A001D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3004F7F628DB39A500928F12 /* QuizBrain.swift */,
-				300E274628F9B8B3004BCEEA /* LevelsBrain.swift */,
-				30CBF48428DDBB2400AF6E9F /* QuizLevels.swift */,
 				30CBF48C28DE2F4100AF6E9F /* Level.swift */,
-				30DD449128DF26D9007ECFB2 /* Gold.swift */,
 				3004F7F428DB385800928F12 /* Question.swift */,
+				30DD449128DF26D9007ECFB2 /* Gold.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

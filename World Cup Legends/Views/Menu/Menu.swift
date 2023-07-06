@@ -39,7 +39,7 @@ struct Menu: View {
 //                    Text("Stats")
 //                }
 //                .menuButtons()
-                
+//                
 //                Button {
 //                    // Code to restore
 //                } label: {
